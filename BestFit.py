@@ -23,7 +23,7 @@ from scipy.optimize import curve_fit
 # http://www.walkingrandomly.com/images/python/least_squares/Python_nonlinear_least_squares.pdf
 
 # Read csv and save to a data frame
-df = pd.read_csv('a34data.csv')
+df = pd.read_csv('data.csv')
 
 h = 0.002
 
