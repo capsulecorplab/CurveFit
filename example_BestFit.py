@@ -16,13 +16,17 @@ ydata = np.array([0.699369,0.700462,0.695354,1.03905,1.97389,2.41143,1.91091,0.9
 #plt.ylabel('ydata')
 #plt.show()
 
+# define fit function
 def func(x, p1,p2):
 	return p1*np.cos(p2*x) + p2*np.sin(p1*x)
 
+# Calculate and show fit parameters. Use a starting guess of p1=1 and p2=0.2
 popt, pcov = curve_fit(func, xdata, ydata,p0=(1.0,0.2))
 
+# Calculate and show sum of squares of residuals since it’s not given by the curve_fit function
 p1 = popt[0]
 p2 = popt[1]
+
 residuals = ydata - func(xdata,p1,p2)
 fres = sum(residuals**2)
 
@@ -33,6 +37,7 @@ print 'p2', p2
 print 'residuals', residuals
 print 'fres', fres
 
+# Plot fitted curve along with data
 curvex=np.linspace(-2,3,100)
 curvey=func(curvex,p1,p2)
 plt.plot(xdata,ydata,'*')
