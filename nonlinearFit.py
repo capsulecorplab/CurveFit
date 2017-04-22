@@ -23,9 +23,10 @@ from scipy.optimize import curve_fit
 # http://www.walkingrandomly.com/images/python/least_squares/Python_nonlinear_least_squares.pdf
 
 # Read csv and save to a data frame
-df = pd.read_csv('example_ski_data.csv')
+df = pd.read_csv('data.csv')
 
-h = 2
+h = 0.002	# use for data.csv
+#h = 2	# use for example_ski_data.csv
 
 ydata = np.array(df.drag[df.h == h])
 xdata = np.array(df.v[df.h == h])
