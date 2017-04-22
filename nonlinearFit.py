@@ -24,6 +24,7 @@ from scipy.optimize import curve_fit
 
 # Read csv and save to a data frame
 df = pd.read_csv('data.csv')
+#df = pd.read_csv('example_ski_data.csv')
 
 h = 0.002	# use for data.csv
 #h = 2	# use for example_ski_data.csv
