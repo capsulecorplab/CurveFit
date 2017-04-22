@@ -25,10 +25,10 @@ from scipy.optimize import curve_fit
 # Read csv and save to a data frame
 df = pd.read_csv('example_ski_data.csv')
 
-inch = 2
+h = 2
 
-ydata = np.array(df.drag[df.inch == inch])
-xdata = np.array(df.v[df.inch == inch])
+ydata = np.array(df.drag[df.h == h])
+xdata = np.array(df.v[df.h == h])
 
 # Original xdata & xdata used to generate dummy data (Uncomment to test working example)
 #xdata = np.array([-2,-1.64,-1.33,-0.7,0,0.45,1.2,1.64,2.32,2.9])
@@ -46,7 +46,7 @@ def func(x, p1,p2):
 # Calculate and show fit parameters. Use a starting guess of p1=1 and p2=0.2
 popt, pcov = curve_fit(func, xdata, ydata,p0=(1.0,0.2))
 
-# Calculate and show sum of squares of residuals since it’s not given by the curve_fit function
+# Calculate and show sum of squares of residuals since it's not given by the curve_fit function
 p1 = popt[0]
 p2 = popt[1]
 
